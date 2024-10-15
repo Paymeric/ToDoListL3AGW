@@ -9,7 +9,7 @@
 - Conception de la structure de données pour les tâches et les utilisateurs (BDD).
 - Fonctionalités de base pour gérer les tâches (titre, une description, une échéance éventuelle, une priorité éventuelle) : ajouter / supprimer / éditer / terminer une tâche et d'afficher la liste des tâches à faire ordonnées selon la priorité et l'échéance.
 - Gestion du stockage des données.
-- Affichage des tâches à faire.
+- Interface minimale.
 
 
 ## Idées supplémentaires pour compléter le noyau
@@ -20,6 +20,7 @@
 - Afficher le temps restant pour une tâches.
 - historique des tâches finies/supprimées
 - Intégration dans des calendriers externes.
+- Interface améliorée.
 
 ## Dépendances entre les fonctionnalités
 L'historique des tâches, exporter et importer des tâches, afficher le temps restant pour une tâche dépendent du noyau principal.
