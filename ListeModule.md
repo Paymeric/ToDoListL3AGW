@@ -1,4 +1,4 @@
-﻿# Welcome to StackEdit!
+﻿# Liste Modules!
 
 import time : il nous sera utile pour que l’utilisateur sait combien de temps lui reste-t-il pour finir la tache. Il est régulièrement mis à jour, 3400 téléchargements par mois et disponible sur la doc de python donc assez bien documenter.
 
