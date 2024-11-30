@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - Accueil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue, {{ user['nom_utilisateur'] }}!</h1>
+        <nav>
+            <a href="/logout">Se déconnecter</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="todo-list">
+            <h2>Vos tâches</h2>
+
+            <!-- Formulaire pour ajouter une nouvelle tâche -->
+            <form action="/add_task" method="POST">
+                <input type="text" name="task" placeholder="Ajouter une nouvelle tâche" required>
+                <button type="submit">Ajouter</button>
+            </form>
+
+            <!-- Affichage des tâches existantes -->
+            <ul>
+                {% for task in tasks %}
+                    <li>
+                        <span {% if task.completed %}class="completed"{% endif %}>{{ task.name }}</span>
+                        <form action="/complete_task/{{ task.id }}" method="POST" style="display:inline;">
+                            <button type="submit" {% if task.completed %}disabled{% endif %}>Terminer</button>
+                        </form>
+                        <form action="/delete_task/{{ task.id }}" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?')">Supprimer</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Votre application To-Do List</p>
+    </footer>
+</body>
+</html>
 
